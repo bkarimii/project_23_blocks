@@ -1,0 +1,107 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Styling for the <p> element */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the <b> element */
+  b {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  /* Styling for the <del> element */
+  del {
+    text-decoration: line-through;
+  }
+  /* Styling for the .courseclass elements */
+.courseclass {
+    background-color: #f8f9fa;
+    color: #111;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Styling for the .courseclass:hover elements */
+  .courseclass:hover {
+    background-color: #f0c14b;
+    color: #111;
+  }
+  
+  /* Styling for the #button element */
+  #button {
+    background-color: #f0c14b;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Styling for the .courseclass elements */
+  .courseclass {
+    background-color: #f8f9fa;
+    color: #111;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Styling for the #buy_button element */
+  #buy_button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Styling for the #comment element */
+  #comment {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styling for the #add_comment element */
+  #add_comment {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Styling for the <ul> element */
+  ul {
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+  
+  /* Styling for the <li> element */
+  li {
+    margin-bottom: 5px;
+  }
+  
+  /* Styling for the <label> element */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  

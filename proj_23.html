@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Page Title</title>
+</head>
+<body>
+    <p>Find your course in our course list,<br>
+        <b style="color: red; font-style: italic; font-weight: bold;">Special Offer</b> only £18 <br> <del>£58</del></p>
+       
+         
+       <button id="button">>Courses List</button> <br><br>
+       <div><span id="span"><div><button class="courseclass" id="front-b">front end >>></button>
+       <ul id="front"><ul>
+       </div>
+       
+       <div>
+       <button class="courseclass" id="back-b">back end >>></button>
+       <ul id="back"><ul></div>
+       </span></div>
+       <!-- ////////////////////////////////// -->
+       
+       <input id="buy_course" /> 
+       <button id="buy_button">Buy Me </button>
+       <ul id="shopping_list"></ul>
+       <p> Price is: £ <span id="price_span"></span><p>
+       
+       <br><br><br>
+       <!-- ////////////////////////////////// -->
+       <label>please Let us know how are our courses :</label><br><br>
+       <input id="comment" /> 
+       <button id="add_comment"> Add a Comment</button>
+       
+       <p>Last Faive comments of Users :</p>
+       <ul id="commet_list"></ul>
+       
+       <!-- /////////////////////////////// -->
+    <script>var last_comments, front_end, item, comment_counter, price, back_end, counter, counter2, span_visibilty;
+
+        function convertToNumber(value) {
+          // Convert a string value to a number if possible
+          let number_value = Number(value);
+          if (Number.isNaN(number_value)) {
+            return 0
+          } else {
+            return number_value
+          }
+        }
+        
+        
+        last_comments = [];
+        front_end = ['html ', 'css', 'JS'];
+        back_end = ['PHP', 'NodeJS', 'Python'];
+        counter = 0;
+        counter2 = 0;
+        span_visibilty = 0;
+        price = 0;
+        if (span_visibilty == 0) {
+          let element_span = document.getElementById('span');
+          element_span.style.visibility = (false) ? 'visible' : 'hidden';
+        }
+        
+        
+        document.getElementById('button').addEventListener('click', (event) => {
+          if (span_visibilty == 0) {
+            let element_span2 = document.getElementById('span');
+            element_span2.style.visibility = (true) ? 'visible' : 'hidden';
+            span_visibilty = (typeof span_visibilty === 'number' ? span_visibilty : 0) + 1;
+          } else if (span_visibilty == 1) {
+            let element_span3 = document.getElementById('span');
+            element_span3.style.visibility = (false) ? 'visible' : 'hidden';
+            span_visibilty = 0;
+            let element_front = document.getElementById('front');
+            element_front.replaceChildren();
+            let element_back = document.getElementById('back');
+            element_back.replaceChildren();
+            counter = 0;
+            counter2 = 0;
+          }
+          comment_counter = 0;
+        
+        });
+        
+        document.getElementById('front-b').addEventListener('click', (event) => {
+          if (counter == 0) {
+            front_end.forEach((item) => {
+              let element_front2 = document.getElementById('front');
+              let new_li = document.createElement('li');
+              new_li.innerText = item;
+        
+              element_front2.appendChild(new_li);
+            });
+            counter = (typeof counter === 'number' ? counter : 0) + 1;
+          } else if (counter == 1) {
+            let element_front3 = document.getElementById('front');
+            element_front3.replaceChildren();
+            counter = 0;
+          }
+        
+        });
+        
+        document.getElementById('back-b').addEventListener('click', (event) => {
+          if (counter2 == 0) {
+            back_end.forEach((item) => {
+              let element_back2 = document.getElementById('back');
+              let new_li2 = document.createElement('li');
+              new_li2.innerText = item;
+        
+              element_back2.appendChild(new_li2);
+            });
+            counter2 = (typeof counter2 === 'number' ? counter2 : 0) + 1;
+          } else if (counter2 == 1) {
+            let element_back3 = document.getElementById('back');
+            element_back3.replaceChildren();
+            counter2 = 0;
+          }
+        
+        });
+        
+        document.getElementById('add_comment').addEventListener('click', (event) => {
+          if (comment_counter <= 5) {
+            last_comments.unshift(document.getElementById('comment').value);
+            let element_commet_list = document.getElementById('commet_list');
+            element_commet_list.replaceChildren();
+            last_comments.forEach((item) => {
+              let new_li3 = document.createElement('li');
+              new_li3.innerText = item;
+        
+              element_commet_list.appendChild(new_li3);
+            });
+          } else if (comment_counter > 5) {
+            last_comments.pop();
+            last_comments.unshift(document.getElementById('comment').value);
+            let element_commet_list2 = document.getElementById('commet_list');
+            element_commet_list2.replaceChildren();
+            last_comments.forEach((item) => {
+              let new_li4 = document.createElement('li');
+              new_li4.innerText = item;
+        
+              element_commet_list2.appendChild(new_li4);
+            });
+          }
+          comment_counter = (typeof comment_counter === 'number' ? comment_counter : 0) + 1;
+        
+        });
+        
+        document.getElementById('buy_button').addEventListener('click', (event) => {
+          let element_shopping_list = document.getElementById('shopping_list');
+          let new_li5 = document.createElement('li');
+          new_li5.innerText = document.getElementById('buy_course').value;
+        
+          element_shopping_list.appendChild(new_li5);
+          price = (typeof price === 'number' ? price : 0) + 19;
+          let element_price_span = document.getElementById('price_span');
+          element_price_span.innerText = price;
+        
+        });</script>   
+</body>
+</html>
